@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	  <meta charset="UTF-8">
+      <meta name="Vikkey" content="Vivek Gupta & IoTMonk">
+	  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+     
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+       
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+   <!-- Bootstrap 4 CSS -->
+    
+    <!-- <link href="../bootstrap-4.0.0-beta.2/style.css" rel="stylesheet" type="text/css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <title>GrowRoom Control</title>
+      
+  	</head>
+    
+ <body>
+  
+ 
+   
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Dieck's GrowRoom Control</h1>
+   </div>
+   </section>
+   
+	<div align="center" class="form">
+       <form action="" method="get"> 
+      
+      	<div class = "container" >
+		  <div class = "row justify-content-around2">
+      
+          
+            	   	
+                	<div class = "col-md-4 align-self-center">
+                    	<div class = "row justify-content-around">
+                        <h4> AUTO-MODE</h4>
+                        <p>Modo "AUTO" para que el sistema base sus decisiones en los valores de sensores.</p> 
+                        <p>Modo "Manual" para prender y apagar los dispositivos manualmente.</p>
+                        </div>
+                        
+                    <div class = "row justify-content-around">
+              <br>
+              <button type="button" id="D1-on" class="btn btn-lg btn-success" >AUTO</button>
+			  <button type="button" id="D1-off" class="btn btn-lg btn-danger" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Manual</button>
+			  
+              </div>
+              </div>
+              <div class = "col-md-6 align-self-center2">
+              	
+                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/351577/charts/1?bgcolor=%23ffffff&color=%2324fc07&dynamic=true&results=2&title=Auto-Mode+I%2FO&type=line&xaxis=TIme&yaxis=Auto+Mode+I%2FO&yaxismax=1&yaxismin=0"></iframe>
+				</div>
+
+              
+              </div>
+         </div>
+      </form>
+           
+          
+           
+      <!--      <div class="collapse" id="collapseExample"> Tentativo integrar esto cuando resuelva el problema
+      de que las librerías de javascript (jquery, popper, y bootstrap.js) no dejan que el script monte datos. -->
+      
+      
+  <div class="container">
+  
+  		<form action="" method="get">
+        <div class = "container" >
+		  <div class = "row justify-content-aroundLED mt-3">
+      
+           	<div class = "col-md-4 align-self-center">
+            <div class = "row justify-content-around">
+            <h5>LED</h5>
+            </div>
+            <div class = "row justify-content-around">
+        
+      	<button type="button" id="D2-on" class="btn btn-md btn-primary" >ON</button>
+     	<button type="button" id="D2-off" class="btn btn-md btn-secondary">OFF</button>
+        
+        </div>
+              </div>
+              <div class = "col-md-6 align-self-center2">
+             
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/351577/charts/2?bgcolor=%23ffffff&color=%23bd3aff&dynamic=true&results=2&title=LED+I%2FO&type=line&yaxismax=1&yaxismin=0"></iframe>
+
+
+			</div>
+      	</div>
+        </div>
+        
+        <div class = "container" >
+		  <div class = "row justify-content-aroundExt mt-3">
+      
+           	<div class = "col-md-4 align-self-center">
+            <div class = "row justify-content-around">
+            <h5>Extractores</h5>
+            </div>
+            <div class = "row justify-content-around">
+        
+     	<button type="button" id="D3-on" class="btn btn-md btn-primary">ON</button>
+       	<button type="button" id="D3-off" class="btn btn-md btn-secondary">OFF</button>
+        </div>
+        </div>
+        
+        <div class = "col-md-6 align-self-center2">
+             
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/351577/charts/3?bgcolor=%23ffffff&color=%23005dff&dynamic=true&results=3&title=Extractores+I%2FO&type=line&yaxismax=1&yaxismin=0"></iframe>
+
+			</div>
+        </div>
+        </div>
+        
+        <div class = "container" >
+		  <div class = "row justify-content-aroundUV mt-3">
+      
+           	<div class = "col-md-4 align-self-center">
+            <div class = "row justify-content-around">
+            <h5>UVc light</h5>
+            </div>
+            <div class = "row justify-content-around">
+        
+     	<button type="button" id="D4-on" class="btn btn-md btn-primary">ON</button>
+       	<button type="button" id="D4-off" class="btn btn-md btn-secondary">OFF</button>
+        </div>
+        </div>
+        
+        <div class = "col-md-6 align-self-center2">
+             
+              <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/351577/charts/4?bgcolor=%23000000&color=%23ff0000&dynamic=true&results=3&title=UV+Sterilizer+I%2FO&type=line&yaxismax=1&yaxismin=0"></iframe>
+
+
+			</div>
+        </div>
+        </div>
+        
+        
+        
+        </form>
+        </div>
+		
+	
+ </div>
+
+
+	 
+</body> 
+   
+   
+
+        <script>
+
+	
+	<!-- Aquí escribir la Write Key bajo la variable ip  -->
+	
+	var APIWKey = "Z30SJ9I2XVO9F45V";
+	
+		document.getElementById('D1-on').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field1=1"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('D1-off').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field1=0"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+		
+		
+		document.getElementById('D2-on').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field2=1"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('D2-off').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field2=0"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+		
+		
+		document.getElementById('D3-on').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field3=1"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('D3-off').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field3=0"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+				
+		
+		document.getElementById('D4-on').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field4=1"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('D4-off').addEventListener('click', function() {
+				var url66 = "http://api.thingspeak.com/update?api_key="+ APIWKey + "&field4=0"
+				$.getJSON(url66, function(data) {
+					console.log(data);
+				});
+		});		
+				
+				
+	</script>
+
+
+    
+
+</html>
